@@ -3,10 +3,13 @@ const nextConfig = {
   reactStrictMode: true,
   experimental: {
     scrollRestoration: true,
+    images: {
+      allowFutureImage: true,
+    },
   },
 
  distDir: '.next',
- outDir: './public',
+ assetPrefix: './public',
 }
 
 module.exports = nextConfig
