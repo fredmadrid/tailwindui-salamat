@@ -5,3 +5,22 @@
 #__next {
   min-height: 100%;
 }
+.bg-dark {
+  background: url(../images/background-salamat.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.bg-darkblue {
+  background: #0B071E;
+}
+
+.mockup {
+  max-width: 720px;
+  width:100%;
+  margin-bottom: -160px;
+}
+
+.bg-echo {
+  background: url(../images/bg-echo.svg) no-repeat top;
+  background-size: 100%;
+}

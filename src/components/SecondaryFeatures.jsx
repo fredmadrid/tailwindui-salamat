@@ -10,10 +10,10 @@ import screenshotProfitLoss from '@/images/screenshots/profit-loss.png'
 
 const features = [
   {
-    name: 'Reporting',
-    summary: 'Stay on top of things with always up-to-date reporting features.',
+    name: 'STREAMLINE MANAGEMENT',
+    summary: 'Spend less time managing & more time doing what you love',
     description:
-      'We talked about reporting in the section above but we needed three items here, so mentioning it one more time for posterity.',
+      'There exists no coherent pipeline bringing script to screen ranging from software for production, accounting, creative asset development, and collective creator ownership.',
     image: screenshotProfitLoss,
     icon: function ReportingIcon() {
       let id = useId()
@@ -44,11 +44,11 @@ const features = [
     },
   },
   {
-    name: 'Inventory',
+    name: 'CREDIBILITY & EQUITY',
     summary:
-      'Never lose track of what’s in stock with accurate inventory tracking.',
+      'Giving the power back to the creator, artist, and the community of fans ',
     description:
-      'We don’t offer this as part of our software but that statement is inarguably true. Accurate inventory tracking would help you for sure.',
+      'By leveraging smart contract royalties, creators keep control of ownership of their intellectual property.',
     image: screenshotInventory,
     icon: function InventoryIcon() {
       return (
@@ -72,11 +72,11 @@ const features = [
     },
   },
   {
-    name: 'Contacts',
+    name: 'FINANCIAL TRANSPARENCY',
     summary:
-      'Organize all of your contacts, service providers, and invoices in one place.',
+      'Accessible & auditable data using web3, ai, & ml ',
     description:
-      'This also isn’t actually a feature, it’s just some friendly advice. We definitely recommend that you do this, you’ll feel really organized and professional.',
+      'Hollywood lacks transparency in its accounting, how it spends money on big budget films.',
     image: screenshotContacts,
     icon: function ContactsIcon() {
       return (
@@ -99,24 +99,24 @@ const features = [
 function Feature({ feature, isActive, className, ...props }) {
   return (
     <div
-      className={clsx(className, { 'opacity-75 hover:opacity-100': !isActive })}
+      className={clsx(className, !isActive && 'opacity-75 hover:opacity-100')}
       {...props}
     >
       <div
-        className={clsx('w-9 rounded-lg', {
-          'bg-blue-600': isActive,
-          'bg-slate-500': !isActive,
-        })}
+        className={clsx(
+          'w-9 rounded-lg',
+          isActive ? 'bg-yellow-500' : 'bg-slate-500'
+        )}
       >
         <svg aria-hidden="true" className="h-9 w-9" fill="none">
           <feature.icon />
         </svg>
       </div>
       <h3
-        className={clsx('mt-6 text-sm font-medium', {
-          'text-blue-600': isActive,
-          'text-slate-600': !isActive,
-        })}
+        className={clsx(
+          'mt-6 text-sm font-medium',
+          isActive ? 'text-yellow-500' : 'text-slate-600'
+        )}
       >
         {feature.name}
       </h3>
@@ -130,17 +130,17 @@ function Feature({ feature, isActive, className, ...props }) {
 
 function FeaturesMobile() {
   return (
-    <div className="-mx-4 mt-20 space-y-10 overflow-hidden px-4 sm:-mx-6 sm:px-6 lg:hidden">
+    <div className="-mx-4 mt-20 flex flex-col gap-y-10 overflow-hidden px-4 sm:-mx-6 sm:px-6 lg:hidden">
       {features.map((feature) => (
         <div key={feature.name}>
           <Feature feature={feature} className="mx-auto max-w-2xl" isActive />
           <div className="relative mt-10 pb-10">
             <div className="absolute -inset-x-4 bottom-0 top-8 bg-slate-200 sm:-inset-x-6" />
-            <div className="relative mx-auto aspect-[844/428] w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
+            <div className="relative mx-auto w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
               <Image
+                className="w-full"
                 src={feature.image}
                 alt=""
-                layout="fill"
                 sizes="52.75rem"
               />
             </div>
@@ -182,18 +182,16 @@ function FeaturesDesktop() {
                   key={feature.name}
                   className={clsx(
                     'px-5 transition duration-500 ease-in-out [&:not(:focus-visible)]:focus:outline-none',
-                    {
-                      'opacity-60': featureIndex !== selectedIndex,
-                    }
+                    featureIndex !== selectedIndex && 'opacity-60'
                   )}
                   style={{ transform: `translateX(-${selectedIndex * 100}%)` }}
                   aria-hidden={featureIndex !== selectedIndex}
                 >
-                  <div className="relative aspect-[844/428] w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
+                  <div className="w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
                     <Image
+                      className="w-full"
                       src={feature.image}
                       alt=""
-                      layout="fill"
                       sizes="52.75rem"
                     />
                   </div>
@@ -211,21 +209,17 @@ function FeaturesDesktop() {
 export function SecondaryFeatures() {
   return (
     <section
-      id="secondary-features"
-      aria-labelledby="secondary-features-title"
-      className="pt-20 pb-14 sm:pb-20 sm:pt-32 lg:pb-32"
+      id="features"
+      aria-label="Features for simplifying everyday business tasks"
+      className="pb-14 pt-20 sm:pb-20 sm:pt-32 lg:pb-32"
     >
       <Container>
         <div className="mx-auto max-w-2xl md:text-center">
-          <h2
-            id="secondary-features-title"
-            className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl"
-          >
-            Simplify everyday business tasks.
+          <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
+          Tools for Creative Communities
           </h2>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
-            Because you’d probably be a little confused if we suggested you
-            complicate your everyday business tasks instead.
+          Salamat powers the future of the creative economy with its combination of seasoned entertainment industry veterans with web3 and the metaverse leaders.
           </p>
         </div>
         <FeaturesMobile />
