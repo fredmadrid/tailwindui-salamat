@@ -6,7 +6,7 @@ const nextConfig = {
   },
 
  distDir: '.next',
-  outDir: 'out',
+  outDir: 'public',
 }
 
 module.exports = nextConfig
