@@ -5,8 +5,8 @@ const nextConfig = {
     scrollRestoration: true,
   },
 
-  distDir: '.next',
-  outDir: 'public'
+ distDir: '.next',
+  outDir: 'public',
 }
 
 module.exports = nextConfig
